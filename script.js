@@ -99,7 +99,7 @@ document.querySelectorAll(".column").forEach((e, columnIndex) => {
             board[columnIndex][row] = turn % 2 !== 0 ? player1 : player2;
 
             // Update the visual representation
-            document.getElementById(`${e.id}r${row + 1}`).style.backgroundColor = turn % 2 !== 0 ? 'red' : 'yellow';
+            document.getElementById(`${e.id}r${row + 1}`).classList.add(turn % 2 !== 0 ? 'red-chip' : 'yellow-chip');
 
             // Check for a winner
             check(turn % 2 !== 0 ? player1 : player2);

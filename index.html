@@ -9,11 +9,13 @@
   <title>Connect Four Game</title>
 </head>
   <body>
-    <header>
+    <header class="header">
       <h1>CONNECT-4</h1>
     </header>
-    <h2 id="current-player">Red's Turn</h2>
-    <div class="board">
+    <section class="game-info">
+      <h2 id="current-player">Red's Turn</h2>
+    </section>
+    <section class="board">
       <ul class="column" id="c1">
         <p id="c1r6"></p>
         <p id="c1r5"></p>
@@ -70,7 +72,7 @@
         <p id="c7r2"></p>
         <p id="c7r1"></p>
       </ul>
-    </div>
+    </section>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
