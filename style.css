@@ -16,7 +16,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: #3e25c4;
+  background-color: #0649ab;
 }
 
 .game-info {
@@ -29,11 +29,11 @@ body {
 }
 
 .board {
-  display: grid;
-  grid-template-columns: repeat(7,1fr);
   width: 630px;
-  background-color: #3e25c4;
-  border-radius: 2%;
+  display: grid;
+  border-radius: 25px;
+  grid-template-columns: repeat(7,1fr);
+  background-color: #0649ab;
 }
 
 .red-chip {
@@ -44,13 +44,75 @@ body {
   background-color: #F1b437;
 }
 
+.reset-button {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  background-color: #0649ab;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #0649ab;
+}
+
+.widget-social li {
+  list-style: none;
+}
+
+.widget-social a {
+  text-decoration: none;
+}
+
+.github {
+  color: white;
+}
+
+.fa-github {
+  font-size: 20px;
+}
+
+.name-game {
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.name {
+  color: grey;
+  font-size: 12px;
+  margin-top: 11px;
+}
+
 h1 {
   text-align: center;
   font-size: 60px;
   color: white;
 }
+
 h2 {
   text-align: center;
+}
+
+h3 {
+  color: white;
+  font-weight: bold;
+  margin: 10px 10px;
+  font-size: 17px;
+  font-family: "Audiowide", sans-serif;
 }
 
 ul {
