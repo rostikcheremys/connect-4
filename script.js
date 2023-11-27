@@ -89,6 +89,9 @@ function checkFourCells(cell1, cell2, cell3, cell4) {
 
 function resetButton() {
     document.getElementById('button').addEventListener('click', function() {
+        this.classList.add('fade-in');
+        this.addEventListener('animationend', () => this.classList.remove('fade-in'), { once: true });
         location.reload();
     });
 }
+
