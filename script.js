@@ -17,10 +17,9 @@ columns.forEach((element, index) => {
         }
 
         const player = turn % 2 !== 0 ? "red" : "yellow";
-        board[index][row] = player;
 
-        const cellId = `${element.id}r${row + 1}`;
-        document.getElementById(cellId).classList.add(`${player}-chip`);
+        board[index][row] = player;
+        document.getElementById(`${element.id}r${row + 1}`).classList.add(`${player}-chip`);
 
         updateGameStatus();
     });
@@ -29,8 +28,7 @@ columns.forEach((element, index) => {
 function updateGameStatus() {
     if (checkWin()) {
         isGameWon = true;
-        const winner = turn % 2 !== 0 ? "Reds" : "Yellows";
-        document.getElementById('current-player').innerText = `${winner} Won!`;
+        document.getElementById('current-player').innerText = turn % 2 !== 0 ? "Reds Won!" : "Yellows Won!";
     } else if (board.every(column => column.every(cell => cell))) {
         document.getElementById('current-player').innerText = "The game ended in a draw. All positions are filled.";
     } else {
@@ -38,10 +36,6 @@ function updateGameStatus() {
         document.getElementById('current-player').innerText = turn % 2 !== 0 ? "Red's Turn" : "Yellow's Turn";
         resetButton();
     }
-}
-
-function checkWin() {
-    return (checkHorizontal() || checkVertical() || checkDiagonal());
 }
 
 function checkHorizontal() {
@@ -82,8 +76,11 @@ function checkDiagonal() {
             }
         }
     }
-
     return false;
+}
+
+function checkWin() {
+    return (checkHorizontal() || checkVertical() || checkDiagonal());
 }
 
 function checkFourCells(cell1, cell2, cell3, cell4) {
