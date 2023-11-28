@@ -5,6 +5,8 @@ let turn = 1;
 const columns = document.querySelectorAll(".column");
 const currentPlayer = document.getElementById('current-player');
 
+const checkIsRed = () => turn % 2 !== 0;
+
 columns.forEach((element, index) => {
     element.addEventListener('click', () => {
         if (isGameWon) {
@@ -17,7 +19,7 @@ columns.forEach((element, index) => {
             return;
         }
 
-        const player = turn % 2 !== 0 ? "red" : "yellow";
+        const player = checkIsRed() ? "red" : "yellow";
 
         board[index][row] = player;
         document.getElementById(`${element.id}r${row + 1}`).classList.add(`${player}-chip`);
@@ -27,16 +29,14 @@ columns.forEach((element, index) => {
 });
 
 function updateGameStatus() {
-    const isRed= turn % 2 !== 0;
-
     if (checkWin()) {
         isGameWon = true;
-        currentPlayer.innerText = isRed ? "Reds Won!" : "Yellows Won!";
+        currentPlayer.innerText = checkIsRed() ? "Reds Won!" : "Yellows Won!";
     } else if (board.every(column => column.every(cell => cell))) {
         currentPlayer.innerText = "The game ended in a draw. All positions are filled.";
     } else {
         turn++;
-        currentPlayer.innerText = isRed ?  "Yellow's Turn" : "Red's Turn";
+        currentPlayer.innerText = checkIsRed() ? "Red's Turn" : "Yellow's Turn";
     }
 
     resetButton();
