@@ -26,6 +26,7 @@ columns.forEach((element, index) => {
         const player = isRedTurn() ? "red" : "yellow";
 
         board[index][row] = player;
+
         document.getElementById(`${element.id}r${row + 1}`).classList.add(`${player}-chip`);
 
         await audioTurn.play();
