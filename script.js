@@ -40,8 +40,8 @@ async function updateGameStatus() {
         await audioWon.play();
         currentPlayer.innerText = isRedTurn() ? "Reds Won!" : "Yellows Won!";
     } else if (board.every(column => column.every(cell => cell))) {
-        currentPlayer.innerText = "The game ended in a draw. All positions are filled.";
         await audioDraw.play();
+        currentPlayer.innerText = "The game ended in a draw. All positions are filled.";
     } else {
         turn++;
         currentPlayer.innerText = isRedTurn() ? "Red's Turn" : "Yellow's Turn";
